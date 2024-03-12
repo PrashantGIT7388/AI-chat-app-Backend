@@ -18,6 +18,8 @@ const configuration = new Configuration({
   apiKey: process.env.CHATBOT_KEY,
 });
 // CHATBOT_KEY is key name in .env file. .env file should be in project root directory - format is below
+
+// prashant AI
 // CHATBOT_KEY="YOR-API-KEY"
 
 const openai = new OpenAIApi(configuration);
@@ -30,11 +32,13 @@ app.post("/chat", async (req, res) => {
   });
   res.send(completion.data.choices[0].text);
 });
+
+
 // 'prompt' is coming from axios post - from react js state - its input field value or query or question 
 
-// Start the server ////////////////////
+// Start the server /
 
-const port = 5555;
+const port = 4000;
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
   console.log(`http://localhost:${port}`);
